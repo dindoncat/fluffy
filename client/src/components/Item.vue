@@ -1,12 +1,20 @@
 <script>
+export default {
+	name: "Item",
+	data: () => ({
+		itemName: "שם הפריט",
+		imgURL: "",
+		price: 513
+	})
+}
 </script>
 
 <template>
   <div class="item">
-    <object data="" alt=""></object>
-    <h3>שם פריט</h3>
+    <object :data="imgURL" :alt="itemName"></object>
+    <h3>{{ itemName }}</h3>
 		<div class="bottom-line">
-			<span class="Price">513</span>
+			<span class="Price">{{ price }}</span>
 			<button class="Pink Label">🛒</button>
 		</div>
   </div>
