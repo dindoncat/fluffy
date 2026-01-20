@@ -1,8 +1,8 @@
 :root {
 	/* brightness */
-	--ultra: 98;
+	--ultra: 98%;
 	--high: 90%;
-	--mid: 70%;
+	--mid: 75%;
 	--low: 50%;
 
 	/* hue */

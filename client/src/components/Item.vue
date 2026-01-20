@@ -2,18 +2,18 @@
 </script>
 
 <template>
-  <div class="item-card">
+  <div class="item">
     <object data="" alt=""></object>
     <h3>שם פריט</h3>
 		<div class="bottom-line">
-			<span class="price">513</span>
-			<button>🛒</button>
+			<span class="Price">513</span>
+			<button class="Pink Label">🛒</button>
 		</div>
   </div>
 </template>
 
 <style scoped>
-	.item-card {
+	.item {
 		padding: 15px;
 		width: 50%;
 		aspect-ratio: 3/2;
