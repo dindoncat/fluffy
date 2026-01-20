@@ -1,11 +1,13 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const http = require('http')
+const connectDB = require('./db/mongoConnect')
+const app = require('./app')
+const config = require('./config')
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+const server = http.createServer(app);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+const startServer = async () => {
+    await connectDB()
+    server.listen(config.port, '0.0.0.0')
+}
+
+startServer()
