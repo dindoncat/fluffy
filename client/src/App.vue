@@ -1,12 +1,20 @@
-<script setup>
-</script>
-
 <template>
-	<div class="test">abc</div>
+	<div class="app">
+		<Layout />
+	</div>
 </template>
 
-<style scoped>
-.test {
-	margin: 500px;
+<script>
+import Layout from './layout/Layout.vue';
+import useMainStore from './stores/main';
+
+export default {
+	components: { Layout },
+
+	created() {
+		useMainStore()
+	}
 }
-</style>
+</script>
+
+<style scoped></style>

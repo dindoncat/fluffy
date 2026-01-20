@@ -4,8 +4,13 @@ import { defineStore } from 'pinia';
 export const useMainStore = defineStore('main', {
 	state: () => ({
 		windowSize: useWindowSize(),
+		minBigScreen: 800
 	}),
-	getters: {},
+	getters: {
+		isMobile() {
+			return this.windowSize.width < this.minBigScreen;
+		},
+	},
 	actions: {},
 });
 
