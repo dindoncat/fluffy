@@ -30,4 +30,10 @@ export default defineConfig([
   },
 
   skipFormatting,
+
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 ])
