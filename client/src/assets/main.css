@@ -33,3 +33,14 @@ a,
     padding: 0 2rem;
   }
 }
+
+button {
+  border-radius: 50px;
+  border: none;
+  height: 3em;
+  aspect-ratio: 1/1;
+}
+
+.price::before {
+  content: "₪"
+}
