@@ -33,3 +33,26 @@ a,
     padding: 0 2rem;
   }
 }
+
+.Pink {
+  background-color: hsl(var(--pink)var(--mid));
+}
+
+.Sage {
+  background-color: hsl(var(--sage)var(--mid));
+}
+
+.Beige {
+  background-color: hsl(var(--beige)var(--mid));
+}
+
+.Label {
+  border-radius: 50px;
+  border: none;
+  height: 3em;
+  aspect-ratio: 1/1;
+}
+
+.Price::before {
+  content: "₪"
+}
