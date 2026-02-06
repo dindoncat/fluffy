@@ -6,6 +6,7 @@ const app = express();
 const config = require('./config');
 
 const dollsRoutes = require('./api/routes/dolls')
+const candlesRoutes = require('./api/routes/candles')
 
 
 
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 app.use('/dolls', dollsRoutes)
+app.use('/candles', candlesRoutes)
 
 
 
