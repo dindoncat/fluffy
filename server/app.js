@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const app = express();
 const config = require('./config');
+const auth = require('./middleware/auth');
 
 const dollsRoutes = require('./api/routes/dolls')
 const candlesRoutes = require('./api/routes/candles')
+const usersRoutes = require('./api/routes/users')
 
 
 
@@ -20,12 +21,6 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
-// app.use(cookieSession({
-//     secret: config.cookieSecret,
-//     overwrite: true,
-//     signed: true
-// }))
-
 app.use(
     cors({
         origin: config.clientUrl,
@@ -36,15 +31,14 @@ app.use(
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use((req, res, next) => {
-    config.isDev || req.session.connection ? next() : res.status(401).json({})
-})
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+
+app.use('/users', usersRoutes)
+
+// Protected Routes
 app.use('/dolls', dollsRoutes)
 app.use('/candles', candlesRoutes)
+
 
 
 
