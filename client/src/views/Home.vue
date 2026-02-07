@@ -1,7 +1,10 @@
 <template>
 	<div class="home">
 		<div class="Slide greeting">
-			<div class="mock-up-image"><h1>תמונה</h1></div>
+			<div class="mock-up-image">
+				<img src="@/assets/me.png" alt="Me" />
+				<h1>תמונה</h1>
+			</div>
 			<h1>מה קורה חברים וברוכים הבאים לערוץ המיינקראפט שלי!</h1>
 		</div>
 		<div class="Slide info">
@@ -32,6 +35,12 @@ export default {
 	height: 300px;
 	width: 80%;
 	background-image: linear-gradient(200deg, hsl(var(--pink)var(--mid)), hsl(var(--sage)var(--high)));
+	margin-inline: auto;
+	> img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 	> h1 {
 		position: absolute;
 		top: 50%;

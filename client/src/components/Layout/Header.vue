@@ -1,8 +1,9 @@
 <template>
 	<div class="header">
-		<Hamburger v-if="mainStore.isMobile"/>
+		<Menu v-if="mainStore.isMobile && !mainStore.isMenuOpen" @click="mainStore.toggleMenu"/>
+		<X v-if="mainStore.isMobile && mainStore.isMenuOpen" @click="mainStore.toggleMenu"/>
 		<Logo />
-		<Links />
+		<Links v-if="!mainStore.isMobile || mainStore.isMenuOpen" />
 		<RouterLink to="/cart">
 			<ShoppingBag />
 		</RouterLink>
@@ -12,13 +13,12 @@
 <script>
 import { mapStores } from 'pinia';
 import useMainStore from '@/stores/main';
-import Hamburger from './Hamburger.vue';
 import Logo from './Logo.vue';
 import Links from './Links.vue';
-import { ShoppingBag } from 'lucide-vue-next';
+import { ShoppingBag ,Menu, X } from 'lucide-vue-next';
 
 export default {
-	components: { Hamburger, Logo, Links, ShoppingBag },
+	components: { Logo, Links, ShoppingBag, Menu, X },
 
 	computed: {
 		...mapStores(useMainStore),
@@ -26,4 +26,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+.header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+</style>

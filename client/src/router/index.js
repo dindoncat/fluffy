@@ -26,11 +26,6 @@ const router = createRouter({
 			component: lazyImportComponent('Cart'),
 		},
 		{
-			path: '/about',
-			name: 'about',
-			component: lazyImportComponent('About'),
-		},
-		{
 			path: '/contact',
 			name: 'contact',
 			component: lazyImportComponent('Contact'),

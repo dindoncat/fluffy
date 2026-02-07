@@ -1,13 +1,9 @@
+<script setup>
+import { Menu } from 'lucide-vue-next';
+</script>
+
 <template>
 	<div>
 
 	</div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style scoped></style>
