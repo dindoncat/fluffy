@@ -11,8 +11,8 @@ const router = createRouter({
 			component: lazyImportComponent('Home'),
 		},
 		{
-			path: '/about',
-			name: 'about',
+			path: '/dolls',
+			name: 'dolls',
 			component: lazyImportComponent('Doll'),
 		},
 		{
@@ -24,6 +24,11 @@ const router = createRouter({
 			path: '/cart',
 			name: 'cart',
 			component: lazyImportComponent('Cart'),
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: lazyImportComponent('About'),
 		},
 		{
 			path: '/contact',
